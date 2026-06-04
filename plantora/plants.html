@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Plant — Plantora 🌿</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="top-nav">
+        <a href="environment.html" class="nav-back">← Back</a>
+        <div class="nav-brand">🌿 Plantora</div>
+        <div class="nav-step">Step 2 of 3</div>
+      </header>
+
+      <div class="page-content">
+        <div class="page-header">
+          <div id="env-badge" class="env-badge"></div>
+          <h1 class="page-title">Select Your Plant</h1>
+          <p class="page-desc">Choose the plant you want to monitor</p>
+        </div>
+
+        <div id="plant-grid" class="plant-grid"></div>
+
+        <div id="error-msg" class="error-msg hidden">
+          <span>⚠️</span>
+          <span>Invalid environment type. <a href="environment.html">Go back and choose again.</a></span>
+        </div>
+      </div>
+    </div>
+    <script src="src/plants.js"></script>
+  </body>
+</html>

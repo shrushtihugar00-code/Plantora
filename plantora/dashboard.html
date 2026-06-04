@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Plantora 🌿</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="top-nav">
+        <a id="back-link" href="plants.html" class="nav-back">← Back</a>
+        <div class="nav-brand">🌿 Plantora</div>
+        <div class="nav-step">Step 3 of 3</div>
+      </header>
+
+      <div class="page-content">
+
+        <!-- Plant hero -->
+        <div class="dashboard-hero">
+          <div id="plant-icon" class="dashboard-plant-icon">🌱</div>
+          <div>
+            <p class="dashboard-label">Monitoring</p>
+            <h1 id="plant-name" class="dashboard-plant-name">Loading...</h1>
+          </div>
+        </div>
+
+        <!-- Scan Button -->
+        <div class="scan-section">
+          <button id="scan-btn" class="btn-scan" onclick="runDiagnosis()">
+            <span class="scan-icon">📡</span>
+            <span id="scan-text">Scan Plant</span>
+          </button>
+          <p class="scan-hint">Fetches live sensor data from IoT device</p>
+        </div>
+
+        <!-- Status Banner -->
+        <div id="status-banner" class="status-banner hidden">
+          <div id="status-dot" class="status-dot"></div>
+          <div>
+            <span id="status-label" class="status-label"></span>
+            <span id="status-msg" class="status-msg"></span>
+          </div>
+        </div>
+
+        <!-- Health Score -->
+        <div id="health-section" class="health-section hidden">
+          <div class="health-header">
+            <span class="health-title">Health Score</span>
+            <span id="health-score-num" class="health-score-num">--</span>
+          </div>
+          <div class="health-bar-track">
+            <div id="health-bar-fill" class="health-bar-fill" style="width: 0%"></div>
+          </div>
+          <div class="health-bar-labels">
+            <span>Critical</span>
+            <span>Moderate</span>
+            <span>Healthy</span>
+          </div>
+        </div>
+
+        <!-- Sensor Cards -->
+        <div id="sensor-grid" class="sensor-grid hidden">
+          <div class="sensor-card" id="card-temp">
+            <div class="sensor-icon">🌡️</div>
+            <div class="sensor-info">
+              <div class="sensor-label">Temperature</div>
+              <div id="temp-value" class="sensor-value">--</div>
+              <div id="temp-range" class="sensor-range"></div>
+            </div>
+            <div id="temp-status" class="sensor-badge"></div>
+          </div>
+
+          <div class="sensor-card" id="card-hum">
+            <div class="sensor-icon">💧</div>
+            <div class="sensor-info">
+              <div class="sensor-label">Humidity</div>
+              <div id="hum-value" class="sensor-value">--</div>
+              <div id="hum-range" class="sensor-range"></div>
+            </div>
+            <div id="hum-status" class="sensor-badge"></div>
+          </div>
+
+          <div class="sensor-card" id="card-soil">
+            <div class="sensor-icon">🌱</div>
+            <div class="sensor-info">
+              <div class="sensor-label">Soil Moisture</div>
+              <div id="soil-value" class="sensor-value">--</div>
+              <div id="soil-range" class="sensor-range"></div>
+            </div>
+            <div id="soil-status" class="sensor-badge"></div>
+          </div>
+        </div>
+        <div class="sensor-card" id="card-soil">
+   ...
+</div>
+
+
+
+<div class="sensor-card" id="card-light">
+  <div class="sensor-icon">☀️</div>
+
+  <div class="sensor-info">
+    <div class="sensor-label">Light Level</div>
+
+    <div id="light-value" class="sensor-value">--</div>
+
+    <div id="light-range" class="sensor-range"></div>
+  </div>
+
+  <div id="light-status" class="sensor-badge"></div>
+</div>
+
+        <!-- Tips -->
+        <div id="tips-section" class="tips-section hidden">
+          <h3 class="tips-title">💡 Care Recommendations</h3>
+          <ul id="tips-list" class="tips-list"></ul>
+        </div>
+
+        <!-- Last Updated -->
+        <div id="last-updated" class="last-updated hidden">
+          <span id="last-updated-text"></span>
+        </div>
+
+        <!-- Error -->
+        <div id="error-section" class="error-section hidden">
+          <div class="error-icon">⚠️</div>
+          <p id="error-text" class="error-text"></p>
+          <button class="btn-retry" onclick="runDiagnosis()">Try Again</button>
+        </div>
+
+      </div>
+    </div>
+    <script src="src/diagnosis.js"></script>
+  </body>
+</html>
